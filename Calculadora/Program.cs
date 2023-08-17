@@ -20,7 +20,8 @@ namespace Calculadora
             Console.WriteLine("2 - Subtração");
             Console.WriteLine("3 - Divisão");
             Console.WriteLine("4 - Multiplicação");
-            Console.WriteLine("5 - Sair");
+            Console.WriteLine("5 - Raiz Quadrada");
+            Console.WriteLine("6 - Sair");
 
             Console.WriteLine("---------------------");
             Console.WriteLine("Selecione uma opção:");
@@ -31,7 +32,8 @@ namespace Calculadora
                 case 2: Subtracao(); break;
                 case 3: Divisao(); break;
                 case 4: Multiplicacao(); break;
-                case 5: System.Environment.Exit(0); break;
+                case 5: RaizQuadrada(); break;
+                case 6: System.Environment.Exit(0); break;
                 default: Menu(); break;
             }
         }
@@ -96,6 +98,17 @@ namespace Calculadora
             Console.WriteLine("");
 
             Console.WriteLine($"O resultado da multiplicação é: {valorDoPrimeiroNumero * valorDoSegundoNumero}");
+            Console.ReadKey();
+            Menu();
+        }
+        static void RaizQuadrada(){
+            Console.Clear();
+
+            Console.WriteLine("Digite o número:");
+            float valorDoNumeroDigitado = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("");
+            Console.WriteLine("O resultado da raiz quadrada é: " + Math.Sqrt(valorDoNumeroDigitado));
             Console.ReadKey();
             Menu();
         }
